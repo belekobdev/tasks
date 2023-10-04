@@ -121,7 +121,6 @@
 
 // }
 // console.log(palindrom("nan"));
-
 //! Вывести сумму до первого нуля.
 //? кыскартылганы num.reduce((acc, el) => el === 0 ? res = acc : acc + el)
 // function task(arr) {
@@ -151,7 +150,6 @@
 // console.log(checkTask(10050));
 
 //! Вывести цифры без дубликатов.
-
 // const checkTask = (arr) => {
 //     return arr.reduce((acc, el, idx) => {
 //         if (arr.indexOf(el) === idx) {
@@ -312,6 +310,16 @@
 
 //! Задание №5
 // Посчитать сумму чисел до первого нуля.
+// let arr = [2, 4, 3, 5, 7, 7, 0, 5, 3, 56, 7, 9];
+// let sum = [];
+// for (let i of arr) {
+//   if (i === 0) {
+//     break;
+//   } else {
+//     sum.push(i);
+//   }
+// }
+// console.log(sum.reduce((acc, el) => acc + el));
 
 // [12, 23, 3, 77, 42, 0, 6, 9, 12, 10]
 // function task(arr) {
@@ -363,30 +371,28 @@
 // console.log(singleNumber([6,1,2,1,2]));
 
 //!
-// let isValid = function(s) {
-//     let stack = [];
-//     let brackets = {
-//         ')': '(',
-//         '}': '{',
-//         ']': '['
+// let isValid = function (s) {
+//   let stack = [];
+//   let brackets = {
+//     ")": "(",
+//     "}": "{",
+//     "]": "[",
+//   };
+//   for (let i = 0; i < s.length; i++) {
+//     const current = s[i];
+//     if (isClosedBracket(current)) {
+//       if (brackets[current] !== stack.pop()) return false;
+//     } else {
+//       stack.push(current);
 //     }
-//     for (let i = 0; i <s.length; i++) {
-//         const current = s[i]
-//         if (isClosedBracket(current)) {
-//             if (brackets[current] !== stack.pop()) return false
-//         } else {
-//             stack.push(current)
-//         }
-//     }
-//     return stack.length === 0;
+//   }
+//   return stack.length === 0;
 // };
 
 // function isClosedBracket(ch) {
-// return [')','}',']'].indexOf(ch) > -1;
+//   return [")", "}", "]"].indexOf(ch) > -1;
 // }
 // console.log(isValid("{{}}"));
-
-
 
 //!
 // function dropCap(n) {
@@ -402,38 +408,31 @@
 // console.log(dropCap("  Space Walk     "));
 
 //!
-// let removeElement = function(nums, val) {
-//     let count = []
-//     for (let i of nums) {
-//         if (i !== val) {
-//          count.push(i);
-//         }
+// let removeElement = function (nums, val) {
+//   let count = [];
+//   for (let i of nums) {
+//     if (i !== val) {
+//       count.push(i);
 //     }
-//     return count.length
+//   }
+//   return count.length;
 // };
-// console.log(removeElement([3,2,2,3], 3));
+// console.log(removeElement([3, 2, 2, 3], 3));
 
 //! two number
 
 /**
-//!  @param {number[]} nums
-//!  @param {number} target
-//!  @return {number[]}
 //  */
 // var twoSum = function(nums, target) {
 //     let myHash = new Map();
-
 //     for (let i = 0; i < nums.length; i++){
 //         let a = target - nums[i];
-
 //         //a + nums[i] == target
 //         if (myHash.has(a)){
 //             return [myHash.get(a), i];
 //         }
-
 //         myHash.set(nums[i], i);
 //     }
-
 //     return [-1, -1];
 // };
 
@@ -515,37 +514,24 @@
 // It can be proven that no longer equal subarrays can be created.
 //?
 // let longestEqualSubarray = function(nums, k) {
-//     let res = nums.filter(el => {
-//         return el !== k
-//     })
+//     let res = nums.filter(el => el !== k)
 //     return res.length
 // };
 // console.log(longestEqualSubarray([1,1,2,2,1,1], 2));
 
+//! Напишите функцию, которая принимает в качестве параметров два целых числа и возвращает значение true (истина), если в числах одинаковое количество цифр; иначе функция возвращает значение false (ложь).
+// Пример: func(2398, 19)
+// Вывод: false
 
+// function task(sum1, sum2) {
+//   let res1 = sum1 + "";
+//   let res2 = sum2 + "";
+//   return res2.length === res1.length;
+// }
+// console.log(task(2398, 2398));
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//!
+// Создать функцию, которая будет рассчитывать расход топлива автомобиля, будет
+//  принимать 2 аргумента 1-й сколько всего километров проехали, второй сколько
+// понадобилось топлива на это, затем функция должна рассчитать сколько ушло топлива
+//  на 100 км и вернуть результат вида: 'На 100км было расходовано 10л горючего'
